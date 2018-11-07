@@ -1,0 +1,33 @@
+body {
+    background: #FAFAFA;
+    font-family: Roboto;
+    margin: 0;
+}
+.navbar {
+    background: #333;
+    margin-block-end: 20px;
+}
+.navbar a {
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 12px;
+    display: inline-block;
+}
+.navbar a.active {
+    font-weight: bold;
+}
+.navbar .container {
+    background: none;
+    padding: 0;
+}
+.container {
+    background: #FFF;
+    box-shadow: 0 0 8px rgba(0,0,0,.08);
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 20px;
+}
+.container h1 {
+    margin: 0;  
+}

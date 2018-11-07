@@ -1,12 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Post from './components/post'
+import Profile from './components/profile'
+import Navbar from './components/navbar'
+import PostsItem from './components/post_item'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class App extends React.Component {
+    render() {
+        return (
+            <>
+                <h1>Home</h1>
+            </>
+            )
+        }
+}
+
+ReactDOM.render(
+    <BrowserRouter>
+        <>
+            <Navbar />
+            <div className="container">
+                <Switch>
+                    <Route path="/profile" component={Profile}></Route>
+                    <Route path="/posts/:id" component={PostsItem} />
+                    <Route path="/posts" component={Post}></Route>
+                    <Route path="/" component={App} exact></Route>
+                </Switch>
+            </div>
+        </>
+    </BrowserRouter>
+    , document.querySelector('#root'));
